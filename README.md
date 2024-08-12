@@ -27,47 +27,82 @@ Siga os passos abaixo para configurar o ambiente:
 
 1. Clone o repositório:
 ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
 ```
 2. Crie um ambiente virtual:
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 3. Instale as dependências:
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
 4. Configure o banco de dados:
-   ```bash
-   python manage.py migrate
-   ```
+```bash
+python manage.py migrate
+```
 5. Crie um superusuário:
-   ```bash
-   python manage.py createsuperuser
-   ```
+```bash
+python manage.py createsuperuser
+```
 6. Inicie o servidor de desenvolvimento:
-   ```bash
-   python manage.py runserver
-   ```
+```bash
+python manage.py runserver
+```
 
 
 ## Uso
 ### Autenticação
 Obtenha o token JWT:
-   ```bash
-   POST /api/token/
-   {
-     "username": "seu-usuario",
-     "password": "sua-senha"
-   }
-   ```
+```bash
+POST /api/token/
+{
+  "username": "seu-usuario",
+  "password": "sua-senha"
+}
+```
 Use o token JWT para autenticação em outras requisições:
-   ```bash
-   Authorization: Bearer <seu-token-jwt>
-   ```
+```bash
+Authorization: Bearer <seu-token-jwt>
+```
 
 ## Inserção de Dados
+Modelo de cadastro de um novo cartão:
+```bash
+POST /api/cards/
+{
+  "card_number": "1234567812345678"
+}
+```
+
+### Upload de Arquivo TXT
+Faça o upload de um arquivo TXT com números de cartão:
+```bash
+POST /api/upload/
+Arquivo: Modelo.txt
+```
+
+## Documentação da API
+
+### Endpoints
+
+#### Autenticação
+- **POST /api/token/**: Gera um token JWT.
+- **POST /api/token/refresh/**: Renova o token JWT.
+
+#### Cartões
+- **POST /api/cards/**: Cadastra um novo cartão.
+- **POST /api/upload/**: Faz upload de um arquivo TXT contendo números de cartões.
+- **GET /api/cards/{card_number}/**: Consulta se um cartão existe no banco de dados.
+
+## Licença
+Este projeto é licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## Autores
+- **Rubens Mariano Lindner** - Desenvolvedor Principal - [Seu GitHub](https://github.com/rubens-mariano)
+
+
 
 
