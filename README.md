@@ -26,6 +26,48 @@ Siga os passos abaixo para configurar o ambiente:
 ### Passos para Instalação
 
 1. Clone o repositório:
-   ```bash
+```bash
    git clone https://github.com/seu-usuario/seu-repositorio.git
    cd seu-repositorio
+```
+2. Crie um ambiente virtual:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+3. Instale as dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Configure o banco de dados:
+   ```bash
+   python manage.py migrate
+   ```
+5. Crie um superusuário:
+   ```bash
+   python manage.py createsuperuser
+   ```
+6. Inicie o servidor de desenvolvimento:
+   ```bash
+   python manage.py runserver
+   ```
+
+
+## Uso
+### Autenticação
+Obtenha o token JWT:
+   ```bash
+   POST /api/token/
+   {
+     "username": "seu-usuario",
+     "password": "sua-senha"
+   }
+   ```
+Use o token JWT para autenticação em outras requisições:
+   ```bash
+   Authorization: Bearer <seu-token-jwt>
+   ```
+
+## Inserção de Dados
+
+
