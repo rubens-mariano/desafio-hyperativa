@@ -27,7 +27,7 @@ Siga os passos abaixo para configurar o ambiente:
 
 1. Clone o repositório:
 ```bash
-git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/rubens-mariano/desafio-hyperativa.git)
+git clone https://github.com/rubens-mariano/desafio-hyperativa.git
 cd seu-repositorio
 ```
 2. Crie um ambiente virtual:
