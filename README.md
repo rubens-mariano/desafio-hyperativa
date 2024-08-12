@@ -20,14 +20,14 @@ Siga os passos abaixo para configurar o ambiente:
 
 ### Pré-requisitos
 - Python 3.8+
-- PostgreSQL
+- Sqlite3
 - Redis
 
 ### Passos para Instalação
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/rubens-mariano/desafio-hyperativa.git)
 cd seu-repositorio
 ```
 2. Crie um ambiente virtual:
@@ -101,7 +101,7 @@ Arquivo: Modelo.txt
 Este projeto é licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## Autores
-- **Rubens Mariano Lindner** - Desenvolvedor Principal - [Seu GitHub](https://github.com/rubens-mariano)
+- **Rubens Mariano Lindner** - Desenvolvedor Principal - [[GitHub](https://github.com/rubens-mariano)](https://github.com/rubens-mariano)
 
 
 
