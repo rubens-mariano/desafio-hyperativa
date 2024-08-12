@@ -66,7 +66,7 @@ POST /api/token/
 ```
 Use o token JWT para autenticação em outras requisições:
 ```bash
-Authorization: Bearer <seu-token-jwt>
+Authorization: "Bearer <seu-token-jwt>"
 ```
 
 ## Inserção de Dados
@@ -75,6 +75,7 @@ Modelo de cadastro de um novo cartão:
 POST /api/cards/
 {
   "card_number": "1234567812345678"
+  "card_type": "C"
 }
 ```
 
@@ -102,7 +103,7 @@ Arquivo: Modelo.txt
 Este projeto é licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## Autores
-- **Rubens Mariano Lindner** - Desenvolvedor Principal - [[GitHub](https://github.com/rubens-mariano)](https://github.com/rubens-mariano)
+- **Rubens Mariano Lindner** - Desenvolvedor Principal - [[GitHub](https://github.com/rubens-mariano)]
 
 
 
