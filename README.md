@@ -41,6 +41,7 @@ pip install -r requirements.txt
 ```
 4. Configure o banco de dados:
 ```bash
+python manage.py makemigrations
 python manage.py migrate
 ```
 5. Crie um superusuário:
