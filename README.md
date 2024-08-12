@@ -10,7 +10,6 @@ Uma API para cadastro e consulta de números de cartão de crédito, com autenti
 - [Contribuindo](#contribuindo)
 - [Licença](#licença)
 - [Autores](#autores)
-- [Considerações Finais](#considerações-finais)
 
 ## Descrição
 Esta API permite cadastrar e consultar números de cartão de crédito com segurança, utilizando criptografia e autenticação JWT. Também suporta upload de arquivos TXT para processamento em massa.
