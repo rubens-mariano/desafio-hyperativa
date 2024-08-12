@@ -98,6 +98,11 @@ Arquivo: Modelo.txt
 - **POST /api/upload/**: Faz upload de um arquivo TXT contendo números de cartões.
 - **GET /api/cards/{card_number}/**: Consulta se um cartão existe no banco de dados.
 
+#### Documentação
+- **GET /api/swagger/**: Documentação da API.
+- **GET /api/redoc/**: Documentação da API.
+
+
 ## Licença
 Este projeto é licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
