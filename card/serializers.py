@@ -13,7 +13,7 @@ class CardSerializer(serializers.ModelSerializer):
         """ Realiza as validações das requisições POST """
         card_number = data.get('card_number')
         if not card_number_validate(card_number):
-            raise serializers.ValidationError('Card number is invalid.')
+            raise serializers.ValidationError({'card_number': 'Card number is invalid.'})
 
         return data
 

@@ -18,8 +18,7 @@ class CardViewSet(viewsets.ModelViewSet):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        return self.build_response(serializer, request)
 
     def build_response(self, card_serializer, request):
         response = Response(card_serializer.data, status=status.HTTP_201_CREATED)

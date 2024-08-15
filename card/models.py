@@ -46,4 +46,4 @@ class Card(models.Model):
         return fernet_key
 
     def __str__(self):
-        return str(self.decrypted_card_number)
+        return str(self.card_number)
