@@ -1,5 +1,5 @@
 from .models import Card
-
+from .token import Token
 
 def digits_of(n):
     """ Busca e retorna o dígito de um número """
@@ -14,7 +14,15 @@ def card_number_validate(card_number):
     even_digits = digits[-2::-2]
 
     checksum_odd = sum(odd_digits)
-    checksum_even = sum(sum(digits_of(d * 2)) for d in even_digits)
+    checksum_even = sum(map(lambda d: sum(digits_of(d*2)), even_digits))
+    
 
     is_valid = (checksum_odd + checksum_even) % 10 == 0
+    return is_valid
+
+
+def card_verify_exist(card_number):
+    token = Token()
+    card_number_tokenized = token.tokenize(card_number)
+    is_valid = Card.objects.filter(card_number=card_number_tokenized).exists()
     return is_valid

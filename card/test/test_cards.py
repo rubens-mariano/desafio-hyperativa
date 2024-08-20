@@ -3,6 +3,7 @@ from rest_framework.test import APITestCase
 from rest_framework import status
 from django.urls import reverse
 from card.models import Card
+from card.token import Token
 
 
 class CardsTesteCase(APITestCase):
@@ -24,10 +25,9 @@ class CardsTesteCase(APITestCase):
         self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + self.access_token)
         data = {'card_number': '4389354860325632', 'card_type': 'C'}
         response = self.client.post(self.list_url, data)
-        card = Card()
-        card_number = card.decrypted_card_number(response.data['card_number'])
+        card_number = response.data['card_number']
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(card_number, '4389354860325632')
+        self.assertEqual(card_number, '57cfa0bd39b925be769d3a5ee687029a6248c1fae18893650d2d34896f76557a')
         self.assertEqual(response.data['card_type'], 'C')
 
     def test_update_card(self):
@@ -45,6 +45,14 @@ class CardsTesteCase(APITestCase):
         response = self.client.delete(reverse('Cards-detail', args=[self.card.id]))
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
+    def test_search_number_card(self):
+        token = Token()
+        card_number_tokenized = token.tokenize('4389354860325632')
+        print(card_number_tokenized)
+        print(Card.objects.all())
+        self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + self.access_token)
+        response = self.client.get(reverse('cards-search', args=['4389354860325632']))
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 
 
